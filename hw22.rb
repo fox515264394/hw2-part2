@@ -20,7 +20,7 @@ class ReminderTableScript < ActiveRecord::Migration
 end
 
 # Create the table that will be used in the database
-ReminderTableScript.up
+ReminderTableScript.up unless File::exists?("testdb.sqlite")
 
 class Reminder < ActiveRecord::Base
 end
